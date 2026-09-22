@@ -1,0 +1,2736 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PAUD ALIF - Kinza | Belajar • Bermain • Berkembang</title>
+
+<meta name="description" content="PAUD ALIF - Kinza, Selajambe RT 13 RW 05, Selajambe, Cisaat, Sukabumi. Belajar, bermain dan berkembang bersama.">
+
+<meta name="theme-color" content="#67c8f3">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#f5fbff;
+    color:#334155;
+    line-height:1.7;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   WARNA
+========================================================= */
+
+:root{
+    --blue:#67c8f3;
+    --blue-dark:#168dcc;
+    --blue-deep:#075b8d;
+    --blue-light:#e5f7ff;
+    --blue-soft:#f4fbff;
+    --border:#d9effa;
+    --white:#ffffff;
+    --text:#334155;
+    --muted:#64748b;
+    --green:#25d366;
+    --green-dark:#19ae57;
+    --youtube:#ff0000;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 3px 18px rgba(0,0,0,.08);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:10px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--text);
+}
+
+.brand-icon{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:var(--blue-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+}
+
+.brand-name{
+    color:var(--blue-dark);
+    font-size:19px;
+    font-weight:800;
+    line-height:1.2;
+}
+
+.brand-tagline{
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+}
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.nav-menu a{
+    color:var(--text);
+    font-size:13px;
+    font-weight:600;
+}
+
+.nav-menu a:hover{
+    color:var(--blue-dark);
+}
+
+.nav-wa{
+    display:flex!important;
+    align-items:center;
+    gap:7px;
+    padding:8px 14px;
+    border-radius:25px;
+    background:var(--green)!important;
+    color:white!important;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    position:relative;
+    height:650px;
+    overflow:hidden;
+    background:var(--blue-light);
+}
+
+.hero-slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .8s ease;
+}
+
+.hero-slide.active{
+    opacity:1;
+    visibility:visible;
+    z-index:2;
+}
+
+.hero-media{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        rgba(0,70,110,.12),
+        rgba(0,55,90,.78)
+    );
+}
+
+.hero-content{
+    position:absolute;
+    z-index:10;
+    width:90%;
+    max-width:850px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:white;
+    text-align:center;
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:7px 17px;
+    border-radius:30px;
+    background:white;
+    color:var(--blue-dark);
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:16px;
+}
+
+.hero-content h1{
+    font-size:56px;
+    line-height:1.1;
+    margin-bottom:10px;
+    text-shadow:0 3px 15px rgba(0,0,0,.45);
+}
+
+.hero-content h2{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    max-width:720px;
+    margin:0 auto 22px;
+    font-size:16px;
+    text-shadow:0 2px 8px rgba(0,0,0,.4);
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    padding:12px 21px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:700;
+    margin:4px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-blue{
+    background:var(--blue);
+    color:white;
+}
+
+.btn-blue:hover{
+    background:var(--blue-dark);
+}
+
+.btn-wa{
+    background:var(--green);
+    color:white;
+}
+
+.btn-wa:hover{
+    background:var(--green-dark);
+}
+
+
+/* =========================================================
+   HERO NAVIGATION
+========================================================= */
+
+.slider-btn{
+    position:absolute;
+    z-index:30;
+    top:50%;
+    transform:translateY(-50%);
+    width:48px;
+    height:48px;
+    border:0;
+    border-radius:50%;
+    background:rgba(255,255,255,.9);
+    color:var(--blue-dark);
+    font-size:21px;
+    cursor:pointer;
+}
+
+.slider-btn:hover{
+    background:white;
+}
+
+.slider-prev{
+    left:20px;
+}
+
+.slider-next{
+    right:20px;
+}
+
+.slider-dots{
+    position:absolute;
+    z-index:30;
+    bottom:24px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:8px;
+}
+
+.slider-dot{
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:rgba(255,255,255,.6);
+    cursor:pointer;
+}
+
+.slider-dot.active{
+    width:28px;
+    border-radius:10px;
+    background:white;
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+section{
+    padding:75px 20px;
+}
+
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-header{
+    text-align:center;
+    margin-bottom:42px;
+}
+
+.section-header h2{
+    color:var(--blue-dark);
+    font-size:34px;
+    line-height:1.3;
+    margin-bottom:8px;
+}
+
+.section-header p{
+    color:var(--muted);
+}
+
+.section-line{
+    width:70px;
+    height:4px;
+    border-radius:10px;
+    background:var(--blue);
+    margin:12px auto;
+}
+
+
+/* =========================================================
+   GALERI VIDEO
+========================================================= */
+
+.video-section{
+    background:white;
+}
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.video-card{
+    overflow:hidden;
+    border:1px solid var(--border);
+    border-radius:24px;
+    background:white;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+    transition:.3s;
+}
+
+.video-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(22,141,204,.15);
+}
+
+
+/* =========================================================
+   YOUTUBE PLAYER
+========================================================= */
+
+.youtube-player{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    background:#111;
+    cursor:pointer;
+}
+
+.youtube-thumb{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.youtube-player:hover .youtube-thumb{
+    transform:scale(1.05);
+}
+
+.youtube-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.10);
+    pointer-events:none;
+}
+
+.youtube-label{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:rgba(0,0,0,.65);
+    color:white;
+    padding:5px 9px;
+    border-radius:6px;
+    font-size:11px;
+    font-weight:700;
+    pointer-events:none;
+}
+
+.youtube-play{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:74px;
+    height:52px;
+    background:#ff0000;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 7px 22px rgba(0,0,0,.3);
+    transition:.3s;
+    pointer-events:none;
+}
+
+.youtube-player:hover .youtube-play{
+    transform:translate(-50%,-50%) scale(1.1);
+}
+
+.youtube-play::after{
+    content:"";
+    margin-left:5px;
+    width:0;
+    height:0;
+    border-top:10px solid transparent;
+    border-bottom:10px solid transparent;
+    border-left:17px solid white;
+}
+
+
+/*
+   iframe dibuat memenuhi player
+*/
+
+.youtube-player iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+}
+
+
+/* =========================================================
+   INFO VIDEO
+========================================================= */
+
+.video-info{
+    padding:19px;
+}
+
+.video-info h3{
+    color:var(--blue-dark);
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+.video-info p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+.watch-youtube{
+    display:inline-block;
+    margin-top:10px;
+    color:var(--youtube);
+    font-size:13px;
+    font-weight:700;
+}
+
+.watch-youtube:hover{
+    text-decoration:underline;
+}
+
+.youtube-channel{
+    text-align:center;
+    margin-top:38px;
+}
+
+.youtube-channel a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:30px;
+    background:var(--youtube);
+    color:white;
+    font-size:14px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   SEJARAH
+========================================================= */
+
+.history{
+    background:var(--blue-soft);
+}
+
+.history-box{
+    max-width:950px;
+    margin:auto;
+    padding:42px;
+    border-radius:28px;
+    background:white;
+    box-shadow:0 10px 35px rgba(22,141,204,.08);
+}
+
+.history-box h3{
+    color:var(--blue-dark);
+    font-size:27px;
+    margin-bottom:14px;
+}
+
+
+/* =========================================================
+   TENTANG
+========================================================= */
+
+.about{
+    background:white;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
+}
+
+.about-text h3{
+    color:var(--blue-dark);
+    font-size:29px;
+    margin-bottom:15px;
+}
+
+.about-text p{
+    margin-bottom:15px;
+}
+
+.about-highlight{
+    padding:42px 30px;
+    text-align:center;
+    background:var(--blue-light);
+    border-radius:30px;
+}
+
+.about-highlight-icon{
+    font-size:62px;
+    margin-bottom:10px;
+}
+
+.about-highlight h3{
+    color:var(--blue-dark);
+    margin-bottom:7px;
+}
+
+
+/* =========================================================
+   KEGIATAN
+========================================================= */
+
+.activities{
+    background:var(--blue-soft);
+}
+
+.activity-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.activity-card{
+    padding:30px 22px;
+    text-align:center;
+    border:1px solid var(--border);
+    border-radius:24px;
+    background:white;
+    transition:.3s;
+}
+
+.activity-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(22,141,204,.12);
+}
+
+.activity-icon{
+    font-size:46px;
+    margin-bottom:10px;
+}
+
+.activity-card h3{
+    color:var(--blue-dark);
+    margin-bottom:7px;
+}
+
+.activity-card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+
+/* =========================================================
+   GALERI FOTO IMGIX
+========================================================= */
+
+.gallery{
+    background:white;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.gallery-photo{
+    position:relative;
+    height:280px;
+    overflow:hidden;
+    border-radius:24px;
+    background:#e8f8ff;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+}
+
+.gallery-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.gallery-photo:hover img{
+    transform:scale(1.07);
+}
+
+.gallery-caption{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:28px 15px 14px;
+    color:white;
+    font-weight:600;
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.78)
+    );
+}
+
+.imgix-badge{
+    position:absolute;
+    left:12px;
+    top:12px;
+    padding:5px 9px;
+    border-radius:20px;
+    background:white;
+    color:var(--blue-dark);
+    font-size:10px;
+    font-weight:700;
+}
+
+.photo-error{
+    position:absolute;
+    inset:0;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    color:var(--blue-dark);
+    background:#eaf8ff;
+    font-size:13px;
+}
+
+
+/* =========================================================
+   INFORMASI
+========================================================= */
+
+.registration{
+    background:linear-gradient(
+        135deg,
+        #67c8f3,
+        #168dcc
+    );
+    color:white;
+    text-align:center;
+}
+
+.registration h2{
+    color:white;
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.registration p{
+    max-width:720px;
+    margin:0 auto 22px;
+}
+
+.registration .btn{
+    background:white;
+    color:var(--blue-dark);
+}
+
+
+/* =========================================================
+   KONTAK
+========================================================= */
+
+.contact{
+    background:white;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.contact-card{
+    padding:35px;
+    border-radius:25px;
+    background:var(--blue-soft);
+    border:1px solid var(--border);
+}
+
+.contact-card h3{
+    color:var(--blue-dark);
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.map{
+    width:100%;
+    height:350px;
+    border:0;
+    border-radius:24px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:var(--blue-deep);
+    color:white;
+    text-align:center;
+    padding:45px 20px;
+}
+
+footer h3{
+    font-size:24px;
+    margin-bottom:7px;
+}
+
+footer p{
+    color:#ddf4ff;
+    font-size:13px;
+}
+
+.footer-social{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin:24px 0;
+}
+
+.social{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:10px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.social.youtube{
+    background:white;
+    color:#ff0000;
+}
+
+.social.youtube:hover{
+    background:#ff0000;
+    color:white;
+}
+
+.social.whatsapp{
+    background:#25d366;
+    color:white;
+}
+
+.social.whatsapp:hover{
+    background:#19ae57;
+    color:white;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:#ddf4ff;
+    font-size:13px;
+}
+
+.footer-links a:hover{
+    color:white;
+    text-decoration:underline;
+}
+
+.footer-line{
+    max-width:500px;
+    height:1px;
+    background:rgba(255,255,255,.2);
+    margin:25px auto 15px;
+}
+
+.copyright{
+    font-size:12px;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP
+========================================================= */
+
+.floating-wa{
+    position:fixed;
+    z-index:9999;
+    right:20px;
+    bottom:20px;
+    width:63px;
+    height:63px;
+    border-radius:50%;
+    background:#25d366;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 7px 25px rgba(0,0,0,.25);
+    animation:pulseWA 2s infinite;
+}
+
+.floating-wa svg{
+    width:38px;
+    height:38px;
+}
+
+@keyframes pulseWA{
+
+    0%{
+        box-shadow:
+        0 0 0 0
+        rgba(37,211,102,.5);
+    }
+
+    70%{
+        box-shadow:
+        0 0 0 15px
+        rgba(37,211,102,0);
+    }
+
+    100%{
+        box-shadow:
+        0 0 0 0
+        rgba(37,211,102,0);
+    }
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(0,0,0,.88);
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-content{
+    position:relative;
+    max-width:1100px;
+    max-height:90vh;
+}
+
+.modal-content img{
+    max-width:100%;
+    max-height:85vh;
+    border-radius:15px;
+}
+
+.modal-close{
+    position:absolute;
+    top:-45px;
+    right:-5px;
+    width:40px;
+    height:40px;
+    border:0;
+    border-radius:50%;
+    background:white;
+    color:#333;
+    font-size:22px;
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .nav-menu{
+        gap:8px;
+    }
+
+    .nav-menu a{
+        font-size:11px;
+    }
+
+    .video-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .nav-menu{
+        display:none;
+    }
+
+    .hero{
+        height:590px;
+    }
+
+    .hero-content h1{
+        font-size:40px;
+    }
+
+    .hero-content h2{
+        font-size:20px;
+    }
+
+    .video-grid,
+    .gallery-grid,
+    .activity-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .history-box{
+        padding:28px 22px;
+    }
+
+    section{
+        padding:55px 17px;
+    }
+
+    .section-header h2{
+        font-size:29px;
+    }
+
+}
+
+@media(max-width:450px){
+
+    .brand-name{
+        font-size:17px;
+    }
+
+    .brand-tagline{
+        font-size:9px;
+    }
+
+    .hero{
+        height:560px;
+    }
+
+    .hero-content h1{
+        font-size:32px;
+    }
+
+    .hero-content h2{
+        font-size:18px;
+    }
+
+    .hero-content p{
+        font-size:13px;
+    }
+
+    .slider-btn{
+        width:40px;
+        height:40px;
+        font-size:17px;
+    }
+
+    .footer-social{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .social{
+        width:190px;
+    }
+
+    .floating-wa{
+        width:57px;
+        height:57px;
+        right:15px;
+        bottom:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar">
+
+<div class="nav-container">
+
+<a href="#beranda" class="brand">
+
+<div class="brand-icon">
+🎓
+</div>
+
+<div>
+
+<div class="brand-name">
+PAUD ALIF - Kinza
+</div>
+
+<span class="brand-tagline">
+Belajar • Bermain • Berkembang
+</span>
+
+</div>
+
+</a>
+
+<div class="nav-menu">
+
+<a href="#beranda">Beranda</a>
+
+<a href="#video">Video</a>
+
+<a href="#sejarah">Sejarah</a>
+
+<a href="#tentang">Tentang</a>
+
+<a href="#kegiatan">Kegiatan</a>
+
+<a href="#galeri">Galeri</a>
+
+<a href="#kontak">Kontak</a>
+
+<a
+class="nav-wa"
+href="https://wa.me/6282210088970?text=Halo%20PAUD%20ALIF%20-%20Kinza,%20saya%20ingin%20mendapatkan%20informasi."
+target="_blank"
+rel="noopener noreferrer">
+
+💬 WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="beranda">
+
+<div class="hero-slide active">
+
+<img
+class="hero-media"
+src="https://6ab206ca49b4a3698ffd97cf.imgix.net/sandbox/guru%20hero.jpeg?auto=format,compress&w=1920&q=85"
+alt="PAUD ALIF - Kinza"
+loading="eager">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<div class="hero-badge">
+🌈 Selamat Datang
+</div>
+
+<h1>
+PAUD ALIF - Kinza
+</h1>
+
+<h2>
+Belajar • Bermain • Berkembang
+</h2>
+
+<p>
+Tempat belajar dan bermain yang menyenangkan
+untuk membantu anak tumbuh, berkembang
+dan percaya diri.
+</p>
+
+<a
+class="btn btn-wa"
+href="https://wa.me/6282210088970?text=Halo%20PAUD%20ALIF%20-%20Kinza,%20saya%20ingin%20mendapatkan%20informasi."
+target="_blank"
+rel="noopener noreferrer">
+
+💬 Hubungi WhatsApp
+
+</a>
+
+<a
+href="#video"
+class="btn btn-blue">
+
+▶ Lihat Video
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-slide">
+
+<img
+class="hero-media"
+src="https://6ab206ca49b4a3698ffd97cf.imgix.net/sandbox/hero2.png?auto=format,compress&w=1920&q=85"
+alt="Kegiatan PAUD ALIF - Kinza"
+loading="eager">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<div class="hero-badge">
+🎨 Kegiatan Pembelajaran
+</div>
+
+<h1>
+Belajar Sambil Bermain
+</h1>
+
+<h2>
+PAUD ALIF - Kinza
+</h2>
+
+<p>
+Anak belajar melalui kegiatan kreatif,
+bermain, bernyanyi, bercerita dan
+berinteraksi bersama.
+</p>
+
+<a
+href="#kegiatan"
+class="btn btn-blue">
+
+📚 Lihat Kegiatan
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-slide">
+
+<img
+class="hero-media"
+src="https://6ab206ca49b4a3698ffd97cf.imgix.net/sandbox/hero%203.png?auto=format,compress&w=1920&q=85"
+alt="Anak PAUD ALIF - Kinza"
+loading="eager">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<div class="hero-badge">
+🌟 Pendidikan Anak Usia Dini
+</div>
+
+<h1>
+Tumbuh Dengan Ceria
+</h1>
+
+<h2>
+PAUD ALIF - Kinza
+</h2>
+
+<p>
+Membangun pengalaman belajar yang positif
+melalui kegiatan yang sesuai dengan
+dunia anak.
+</p>
+
+<a
+class="btn btn-wa"
+href="https://wa.me/6282210088970?text=Halo%20PAUD%20ALIF%20-%20Kinza,%20saya%20ingin%20mengetahui%20informasi."
+target="_blank"
+rel="noopener noreferrer">
+
+💬 Tanya Informasi
+
+</a>
+
+</div>
+
+</div>
+
+<button
+class="slider-btn slider-prev"
+onclick="prevSlide()"
+aria-label="Slide sebelumnya">
+
+❮
+
+</button>
+
+<button
+class="slider-btn slider-next"
+onclick="nextSlide()"
+aria-label="Slide berikutnya">
+
+❯
+
+</button>
+
+<div class="slider-dots">
+
+<span
+class="slider-dot active"
+onclick="goSlide(0)"> </span>
+
+<span
+class="slider-dot"
+onclick="goSlide(1)"> </span>
+
+<span
+class="slider-dot"
+onclick="goSlide(2)"> </span>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     GALERI VIDEO
+========================================================= -->
+
+<section class="video-section" id="video">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+🎬 Galeri Video
+</h2>
+
+<div class="section-line"></div>
+
+<p>
+Dokumentasi PAUD ALIF - Kinza
+</p>
+
+</div>
+
+<div class="video-grid">
+
+<!-- VIDEO 1 -->
+
+<div class="video-card">
+
+<div
+class="youtube-player"
+data-video="sIlkjgB1EWI"
+onclick="loadYouTube(this)">
+
+<img
+class="youtube-thumb"
+src="https://img.youtube.com/vi/sIlkjgB1EWI/hqdefault.jpg"
+alt="Video PAUD ALIF - Kinza"
+loading="lazy">
+
+<div class="youtube-overlay"></div>
+
+<div class="youtube-label">
+YouTube
+</div>
+
+<div class="youtube-play"></div>
+
+</div>
+
+<div class="video-info">
+<!-- 
+<h3>
+Kegiatan PAUD ALIF - Kinza
+</h3> -->
+
+<p>
+Mini Vlog KB-Alif 2026, by Mis Dwi
+</p>
+
+<a
+class="watch-youtube"
+href="https://youtu.be/sIlkjgB1EWI"
+target="_blank"
+rel="noopener noreferrer">
+
+▶ Tonton di YouTube
+
+</a>
+
+</div>
+
+</div>
+
+<!-- VIDEO 2 -->
+
+<div class="video-card">
+
+<div
+class="youtube-player"
+data-video="Uc1I2m3NDH4"
+onclick="loadYouTube(this)">
+
+<img
+class="youtube-thumb"
+src="https://img.youtube.com/vi/Uc1I2m3NDH4/hqdefault.jpg"
+alt="Kegiatan Pembelajaran"
+loading="lazy">
+
+<div class="youtube-overlay"></div>
+
+<div class="youtube-label">
+YouTube
+</div>
+
+<div class="youtube-play"></div>
+
+</div>
+
+<div class="video-info">
+
+<!-- <h3>
+Kegiatan Pembelajaran
+</h3> -->
+
+<p>
+Movie Official | lagu - Cipta. Mis Eneng Azizah
+</p>
+
+<a
+class="watch-youtube"
+href="https://youtu.be/Uc1I2m3NDH4"
+target="_blank"
+rel="noopener noreferrer">
+
+▶ Tonton di YouTube
+
+</a>
+
+</div>
+
+</div>
+
+<!-- VIDEO 3 -->
+
+<div class="video-card">
+
+<div
+class="youtube-player"
+data-video="yEGiG1nFVi8"
+onclick="loadYouTube(this)">
+
+<img
+class="youtube-thumb"
+src="https://img.youtube.com/vi/yEGiG1nFVi8/hqdefault.jpg"
+alt="Aktivitas Anak"
+loading="lazy">
+
+<div class="youtube-overlay"></div>
+
+<div class="youtube-label">
+YouTube
+</div>
+
+<div class="youtube-play"></div>
+
+</div>
+
+<div class="video-info">
+<!--
+<h3>
+Aktivitas Anak
+</h3> -->
+
+<p>
+Pentas anak - anak Paud Alif - Kinza, 01 Juli 2026, angkatan Tahun 2025/2026
+</p>
+
+<a
+class="watch-youtube"
+href="https://youtu.be/yEGiG1nFVi8"
+target="_blank"
+rel="noopener noreferrer">
+
+▶ Tonton di YouTube
+
+</a>
+
+</div>
+
+</div>
+
+<!-- VIDEO 4 -->
+
+<div class="video-card">
+
+<div
+class="youtube-player"
+data-video="nuWAT2DQY1w"
+onclick="loadYouTube(this)">
+
+<img
+class="youtube-thumb"
+src="https://img.youtube.com/vi/nuWAT2DQY1w/hqdefault.jpg"
+alt="Kegiatan Anak"
+loading="lazy">
+
+<div class="youtube-overlay"></div>
+
+<div class="youtube-label">
+YouTube
+</div>
+
+<div class="youtube-play"></div>
+
+</div>
+
+<div class="video-info">
+<!--
+<h3>
+Kegiatan Anak
+</h3>
+-->
+<p>
+
+Outing Class | Damkar | Alif Kinza
+</p>
+
+<a
+class="watch-youtube"
+href="https://youtu.be/nuWAT2DQY1w"
+target="_blank"
+rel="noopener noreferrer">
+
+▶ Tonton di YouTube
+
+</a>
+
+</div>
+
+</div>
+
+<!-- VIDEO 5 -->
+
+<div class="video-card">
+
+<div
+class="youtube-player"
+data-video="cATzr8LulDE"
+onclick="loadYouTube(this)">
+
+<img
+class="youtube-thumb"
+src="https://img.youtube.com/vi/cATzr8LulDE/hqdefault.jpg"
+alt="Kegiatan Pembelajaran"
+loading="lazy">
+
+<div class="youtube-overlay"></div>
+
+<div class="youtube-label">
+YouTube
+</div>
+
+<div class="youtube-play"></div>
+
+</div>
+
+<div class="video-info">
+<!--
+<h3>
+Lagu | Anak - anak | Versi Alif - Kinza
+</h3>
+-->
+<p>
+Lagu | Anak - anak | Versi Alif - Kinza
+</p>
+
+<a
+class="watch-youtube"
+href="https://youtu.be/cATzr8LulDE"
+target="_blank"
+rel="noopener noreferrer">
+
+▶ Tonton di YouTube
+
+</a>
+
+</div>
+
+</div>
+
+<!-- VIDEO 6 -->
+
+<div class="video-card">
+
+<div
+class="youtube-player"
+data-video="o9xjcodcej4"
+onclick="loadYouTube(this)">
+
+<img
+class="youtube-thumb"
+src="https://img.youtube.com/vi/o9xjcodcej4/hqdefault.jpg"
+alt="Dokumentasi PAUD"
+loading="lazy">
+
+<div class="youtube-overlay"></div>
+
+<div class="youtube-label">
+YouTube
+</div>
+
+<div class="youtube-play"></div>
+
+</div>
+
+<div class="video-info">
+<!--
+<h3>
+Dokumentasi PAUD ALIF - Kinza
+</h3>
+-->
+<p>
+
+Telah dibuka pendaftaran baru quota terbatas
+</p>
+
+<a
+class="watch-youtube"
+href="https://youtu.be/o9xjcodcej4"
+target="_blank"
+rel="noopener noreferrer">
+
+▶ Tonton di YouTube
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="youtube-channel">
+
+<a
+href="https://www.youtube.com/@paudalifkinza"
+target="_blank"
+rel="noopener noreferrer">
+
+▶ Kunjungi Channel YouTube PAUD ALIF - Kinza
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     SEJARAH
+========================================================= -->
+
+<section class="history" id="sejarah">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+Sejarah
+</h2>
+
+<div class="section-line"></div>
+
+<p>
+Mengenal PAUD ALIF - Kinza
+</p>
+
+</div>
+
+<div class="history-box">
+
+<h3>
+PAUD ALIF - Kinza
+</h3>
+
+<p>
+PAUD ALIF - Kinza hadir sebagai bagian
+dari upaya memberikan lingkungan pendidikan
+anak usia dini yang ramah, nyaman dan
+menyenangkan bagi anak-anak di wilayah
+Selajambe, Cisaat, Sukabumi.
+</p>
+
+<br>
+
+<p>
+Dalam kegiatan pembelajaran, anak diberikan
+kesempatan untuk bermain, bereksplorasi,
+berkarya, bernyanyi, bercerita dan
+berinteraksi bersama teman serta guru.
+</p>
+
+<br>
+
+<p>
+Pendidikan anak usia dini memberikan ruang
+bagi perkembangan sosial, emosional, bahasa,
+motorik, kreativitas dan kemandirian anak.
+</p>
+
+<br>
+
+<p>
+Dengan semangat
+<strong>
+Belajar • Bermain • Berkembang
+</strong>,
+PAUD ALIF - Kinza terus menciptakan
+pengalaman belajar yang positif bagi anak.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     TENTANG
+========================================================= -->
+
+<section class="about" id="tentang">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+Tentang PAUD
+</h2>
+
+<div class="section-line"></div>
+
+<p>
+Belajar dengan gembira dalam lingkungan
+yang ramah dan menyenangkan
+</p>
+
+</div>
+
+<div class="about-grid">
+
+<div class="about-text">
+
+<h3>
+Belajar • Bermain • Berkembang
+</h3>
+
+<p>
+PAUD ALIF - Kinza merupakan tempat
+pendidikan anak usia dini yang memberikan
+pengalaman belajar melalui kegiatan yang
+menyenangkan dan sesuai dengan dunia anak.
+</p>
+
+<p>
+Anak mendapatkan kesempatan untuk bermain,
+bereksplorasi, berkarya, bernyanyi,
+bercerita dan berinteraksi dengan teman
+serta guru.
+</p>
+
+<p>
+Melalui berbagai kegiatan tersebut,
+anak didukung untuk mengembangkan kreativitas,
+kemampuan berkomunikasi, kemandirian
+dan rasa percaya diri.
+</p>
+
+</div>
+
+<div class="about-highlight">
+
+<div class="about-highlight-icon">
+👧🏻👦🏻
+</div>
+
+<h3>
+Dunia Anak
+</h3>
+
+<p>
+Bermain adalah bagian penting
+dari proses belajar anak.
+</p>
+
+<br>
+
+<strong>
+Belajar dengan ceria,
+tumbuh dengan percaya diri.
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     KEGIATAN PEMBELAJARAN
+========================================================= -->
+
+<section class="activities" id="kegiatan">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+Kegiatan Pembelajaran
+</h2>
+
+<div class="section-line"></div>
+
+<p>
+Berbagai kegiatan untuk mendukung
+perkembangan anak
+</p>
+
+</div>
+
+<div class="activity-grid">
+
+<div class="activity-card">
+
+<div class="activity-icon">
+🎨
+</div>
+
+<h3>
+Seni & Kreativitas
+</h3>
+
+<p>
+Menggambar, mewarnai dan membuat
+berbagai karya sederhana.
+</p>
+
+</div>
+
+<div class="activity-card">
+
+<div class="activity-icon">
+🎵
+</div>
+
+<h3>
+Bernyanyi & Musik
+</h3>
+
+<p>
+Belajar melalui lagu, musik
+dan gerakan yang menyenangkan.
+</p>
+
+</div>
+
+<div class="activity-card">
+
+<div class="activity-icon">
+📖
+</div>
+
+<h3>
+Bercerita
+</h3>
+
+<p>
+Mengembangkan bahasa dan
+imajinasi melalui cerita.
+</p>
+
+</div>
+
+<div class="activity-card">
+
+<div class="activity-icon">
+🧩
+</div>
+
+<h3>
+Permainan Edukatif
+</h3>
+
+<p>
+Bermain sambil melatih kemampuan
+berpikir dan memecahkan masalah.
+</p>
+
+</div>
+
+<div class="activity-card">
+
+<div class="activity-icon">
+🤝
+</div>
+
+<h3>
+Bermain Bersama
+</h3>
+
+<p>
+Melatih komunikasi dan kerja sama
+bersama teman.
+</p>
+
+</div>
+
+<div class="activity-card">
+
+<div class="activity-icon">
+🌳
+</div>
+
+<h3>
+Mengenal Lingkungan
+</h3>
+
+<p>
+Mengenal lingkungan melalui
+kegiatan di luar kelas.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     GALERI FOTO
+========================================================= -->
+
+<section class="gallery" id="galeri">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+📷 Galeri Foto
+</h2>
+
+<div class="section-line"></div>
+
+<p>
+Dokumentasi kegiatan PAUD ALIF - Kinza
+</p>
+
+</div>
+
+<div
+class="gallery-grid"
+id="galleryGrid">
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     INFORMASI
+========================================================= -->
+
+<section class="registration">
+
+<div class="container">
+
+<h2>
+🎓 Informasi PAUD ALIF - Kinza
+</h2>
+
+<p>
+Untuk mendapatkan informasi mengenai
+pendaftaran, kegiatan, jadwal atau
+informasi lainnya, silakan hubungi
+PAUD ALIF - Kinza melalui WhatsApp.
+</p>
+
+<a
+class="btn"
+href="https://wa.me/6282210088970?text=Halo%20PAUD%20ALIF%20-%20Kinza,%20saya%20ingin%20mendapatkan%20informasi."
+target="_blank"
+rel="noopener noreferrer">
+
+💬 Hubungi WhatsApp
+
+</a>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     LOKASI
+========================================================= -->
+
+<section class="contact" id="kontak">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+Lokasi & Kontak
+</h2>
+
+<div class="section-line"></div>
+
+<p>
+PAUD ALIF - Kinza
+</p>
+
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>
+📍 Alamat
+</h3>
+
+<p>
+<strong>
+PAUD ALIF - Kinza
+</strong>
+</p>
+
+<p>
+Selajambe RT 13 RW 05<br>
+Selajambe, Cisaat<br>
+Sukabumi, Jawa Barat
+</p>
+
+<br>
+
+<h3>
+📱 WhatsApp
+</h3>
+
+<p>
+Hubungi kami untuk informasi
+pendaftaran dan kegiatan.
+</p>
+
+<a
+class="btn btn-wa"
+href="https://wa.me/6282210088970?text=Halo%20PAUD%20ALIF%20-%20Kinza,%20saya%20ingin%20mendapatkan%20informasi."
+target="_blank"
+rel="noopener noreferrer">
+
+💬 Chat WhatsApp
+
+</a>
+
+</div>
+
+<div>
+
+<iframe
+class="map"
+src="https://www.google.com/maps?q=Selajambe%20Cisaat%20Sukabumi&output=embed"
+loading="lazy"
+title="Lokasi PAUD ALIF - Kinza">
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+<div class="container">
+
+<h3>
+PAUD ALIF - Kinza
+</h3>
+
+<p>
+Belajar • Bermain • Berkembang
+</p>
+
+<p>
+Selajambe RT 13 RW 05,
+Selajambe, Cisaat, Sukabumi
+</p>
+
+<div class="footer-social">
+
+<a
+href="https://www.youtube.com/@paudalifkinza"
+target="_blank"
+rel="noopener noreferrer"
+class="social youtube">
+
+▶ YouTube
+
+</a>
+
+<a
+href="https://wa.me/6282210088970?text=Halo%20PAUD%20ALIF%20-%20Kinza,%20saya%20ingin%20mendapatkan%20informasi."
+target="_blank"
+rel="noopener noreferrer"
+class="social whatsapp">
+
+💬 WhatsApp
+
+</a>
+
+</div>
+
+<div class="footer-links">
+
+<a href="#beranda">
+Beranda
+</a>
+
+<a href="#video">
+Video
+</a>
+
+<a href="#sejarah">
+Sejarah
+</a>
+
+<a href="#tentang">
+Tentang PAUD
+</a>
+
+<a href="#kegiatan">
+Kegiatan
+</a>
+
+<a href="#galeri">
+Galeri Foto
+</a>
+
+<a href="#kontak">
+Kontak
+</a>
+
+</div>
+
+<div class="footer-line"></div>
+
+<p class="copyright">
+© 2026 PAUD ALIF - Kinza.
+Semua hak dilindungi.
+</p>
+
+</div>
+
+</footer>
+
+<!-- =========================================================
+     FLOATING WHATSAPP
+========================================================= -->
+
+<a
+class="floating-wa"
+href="https://wa.me/6282210088970?text=Halo%20PAUD%20ALIF%20-%20Kinza,%20saya%20ingin%20mendapatkan%20informasi."
+target="_blank"
+rel="noopener noreferrer"
+aria-label="WhatsApp PAUD ALIF - Kinza">
+
+<svg viewBox="0 0 32 32">
+
+<path
+fill="#fff"
+d="M19.11 17.21c-.29-.15-1.71-.84-1.97-.94-.26-.1-.45-.15-.64.15-.19.29-.74.94-.9 1.13-.16.19-.33.22-.62.07-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.43-1.72-1.6-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.33.43-.49.14-.16.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.56-.47-.49-.64-.5h-.55c-.19 0-.5.07-.76.36-.26.29-.99.97-.99 2.36s1.02 2.74 1.16 2.93c.14.19 2 3.05 4.85 4.28.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.71-.7 1.95-1.37.24-.67.24-1.24.17-1.37-.07-.12-.26-.19-.55-.34z"/>
+
+<path
+fill="#fff"
+d="M16 3C8.82 3 3 8.82 3 16c0 2.29.6 4.44 1.65 6.3L3 29l6.86-1.6A12.94 12.94 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.63c-2.01 0-3.88-.59-5.45-1.61l-.39-.24-4.07.95.97-3.97-.25-.41A10.6 10.6 0 1 1 16 26.63z"/>
+
+</svg>
+
+</a>
+
+<!-- =========================================================
+     MODAL FOTO
+========================================================= -->
+
+<div
+class="modal"
+id="photoModal"
+onclick="closePhoto()">
+
+<div
+class="modal-content"
+onclick="event.stopPropagation()">
+
+<button
+class="modal-close"
+onclick="closePhoto()">
+
+×
+
+</button>
+
+<img
+id="modalImage"
+src=""
+alt="Foto PAUD ALIF - Kinza">
+
+</div>
+
+</div>
+
+<script>
+
+/* =========================================================
+   IMGIX
+========================================================= */
+
+const IMGIX_BASE =
+"https://6ab206ca49b4a3698ffd97cf.imgix.net/sandbox/";
+
+
+/* =========================================================
+   GALERI FOTO
+========================================================= */
+
+const galleryPhotos = [
+
+{
+file:"kegiatan-1.jpg",
+title:"Kegiatan Belajar"
+},
+
+{
+file:"kegiatan-2.jpg",
+title:"Kegiatan Bermain"
+},
+
+{
+file:"kegiatan-3.jpg",
+title:"Kegiatan Kreativitas"
+},
+
+{
+file:"kegiatan-4.jpg",
+title:"Bermain Bersama"
+},
+
+{
+file:"kegiatan-5.jpg",
+title:"Aktivitas Anak"
+},
+
+{
+file:"kegiatan-6.jpg",
+title:"Kebersamaan"
+},
+
+{
+file:"kegiatan-7.jpg",
+title:"Kegiatan PAUD"
+},
+
+{
+file:"kegiatan-8.jpg",
+title:"Dokumentasi Sekolah"
+},
+
+{
+file:"kegiatan-9.jpg",
+title:"Kegiatan Pembelajaran"
+}
+
+];
+
+
+/* =========================================================
+   RENDER GALERI
+========================================================= */
+
+function renderGallery(){
+
+const gallery =
+document.getElementById(
+"galleryGrid"
+);
+
+gallery.innerHTML = "";
+
+
+galleryPhotos.forEach(
+function(photo){
+
+const item =
+document.createElement("div");
+
+item.className =
+"gallery-photo";
+
+
+const img =
+document.createElement("img");
+
+img.src =
+IMGIX_BASE +
+photo.file +
+"?auto=format,compress&w=1200&q=85";
+
+img.alt =
+photo.title;
+
+img.loading =
+"lazy";
+
+
+const badge =
+document.createElement("div");
+
+badge.className =
+"imgix-badge";
+
+badge.textContent =
+"🖼️ Imgix";
+
+
+const caption =
+document.createElement("div");
+
+caption.className =
+"gallery-caption";
+
+caption.textContent =
+photo.title;
+
+
+const error =
+document.createElement("div");
+
+error.className =
+"photo-error";
+
+error.innerHTML =
+"Foto belum ditemukan.<br>" +
+"<strong>" +
+photo.file +
+"</strong>";
+
+
+img.onerror =
+function(){
+
+img.style.display =
+"none";
+
+error.style.display =
+"flex";
+
+};
+
+
+item.appendChild(img);
+
+item.appendChild(badge);
+
+item.appendChild(caption);
+
+item.appendChild(error);
+
+
+item.onclick =
+function(){
+
+openPhoto(
+IMGIX_BASE +
+photo.file +
+"?auto=format,compress&w=2000&q=90"
+);
+
+};
+
+
+gallery.appendChild(item);
+
+}
+
+);
+
+}
+
+
+/* =========================================================
+   HERO SLIDER
+========================================================= */
+
+let currentSlide = 0;
+
+const slides =
+document.querySelectorAll(
+".hero-slide"
+);
+
+const dots =
+document.querySelectorAll(
+".slider-dot"
+);
+
+
+function showSlide(index){
+
+slides.forEach(
+function(slide){
+
+slide.classList.remove(
+"active"
+);
+
+}
+);
+
+
+dots.forEach(
+function(dot){
+
+dot.classList.remove(
+"active"
+);
+
+}
+);
+
+
+slides[index]
+.classList.add(
+"active"
+);
+
+
+dots[index]
+.classList.add(
+"active"
+);
+
+}
+
+
+function nextSlide(){
+
+currentSlide++;
+
+if(
+currentSlide >=
+slides.length
+){
+
+currentSlide = 0;
+
+}
+
+showSlide(
+currentSlide
+);
+
+}
+
+
+function prevSlide(){
+
+currentSlide--;
+
+if(
+currentSlide < 0
+){
+
+currentSlide =
+slides.length - 1;
+
+}
+
+showSlide(
+currentSlide
+);
+
+}
+
+
+function goSlide(index){
+
+currentSlide =
+index;
+
+showSlide(
+currentSlide
+);
+
+}
+
+
+setInterval(
+nextSlide,
+7000
+);
+
+
+/* =========================================================
+   YOUTUBE PLAYER
+   PERBAIKAN ERROR CONFIGURATION 153
+========================================================= */
+
+function loadYouTube(player){
+
+if(
+player.classList.contains(
+"loaded"
+)
+){
+
+return;
+
+}
+
+
+const videoId =
+player.getAttribute(
+"data-video"
+);
+
+
+if(!videoId){
+
+return;
+
+}
+
+
+/*
+   Membuat URL embed YouTube.
+   
+   origin menggunakan domain halaman aktif.
+   Ini membantu YouTube mengenali asal embed.
+*/
+
+const currentOrigin =
+window.location.origin;
+
+
+const embedURL =
+"https://www.youtube.com/embed/" +
+encodeURIComponent(videoId) +
+"?autoplay=1" +
+"&rel=0" +
+"&modestbranding=1" +
+"&playsinline=1" +
+"&enablejsapi=1" +
+"&origin=" +
+encodeURIComponent(currentOrigin);
+
+
+/*
+   Buat iframe
+*/
+
+const iframe =
+document.createElement(
+"iframe"
+);
+
+
+iframe.src =
+embedURL;
+
+
+iframe.title =
+"Video PAUD ALIF - Kinza";
+
+
+iframe.setAttribute(
+"allow",
+"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+);
+
+
+iframe.setAttribute(
+"allowfullscreen",
+""
+);
+
+
+iframe.setAttribute(
+"referrerpolicy",
+"strict-origin-when-cross-origin"
+);
+
+
+iframe.setAttribute(
+"loading",
+"eager"
+);
+
+
+iframe.style.width =
+"100%";
+
+iframe.style.height =
+"100%";
+
+iframe.style.border =
+"0";
+
+iframe.style.display =
+"block";
+
+
+/*
+   Kosongkan thumbnail
+*/
+
+player.innerHTML =
+"";
+
+
+/*
+   Masukkan iframe
+*/
+
+player.appendChild(
+iframe
+);
+
+
+player.classList.add(
+"loaded"
+);
+
+}
+
+
+/* =========================================================
+   MODAL FOTO
+========================================================= */
+
+function openPhoto(src){
+
+const modal =
+document.getElementById(
+"photoModal"
+);
+
+const image =
+document.getElementById(
+"modalImage"
+);
+
+image.src =
+src;
+
+modal.classList.add(
+"active"
+);
+
+}
+
+
+function closePhoto(){
+
+document
+.getElementById(
+"photoModal"
+)
+.classList.remove(
+"active"
+);
+
+}
+
+
+document.addEventListener(
+"keydown",
+function(event){
+
+if(
+event.key === "Escape"
+){
+
+closePhoto();
+
+}
+
+}
+);
+
+
+/* =========================================================
+   START
+========================================================= */
+
+renderGallery();
+
+</script>
+
+</body>
+</html>
